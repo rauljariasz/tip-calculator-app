@@ -2,6 +2,7 @@
 
 .inputContainer {
   margin-bottom: 3rem;
+  padding: 0 0.8rem;
   &__bill {
     height: auto;
     & > label {
@@ -120,7 +121,13 @@
     &-input {
       width: 100%;
       height: 4.5rem;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
+      position: relative;
+      & > img {
+        position: absolute;
+        left: 2rem;
+        top: calc(50% -  8px);
+      }
       & > input {
         width: 100%;
         height: 100%;
@@ -153,4 +160,18 @@
 .cantBe {
   color: red;
   font-size: 1.3rem;
+}
+
+@media (min-width: 920px) {
+  .inputContainer {
+    width: 50%;
+    margin-bottom: 0;
+    margin-right: 4rem;
+    padding: 2rem 1rem;
+    &__tip {
+      &-list {
+        grid-template-columns: repeat(3, minmax(11.5rem, 1fr));
+      }
+    }
+  }
 }

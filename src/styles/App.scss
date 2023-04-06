@@ -18,5 +18,77 @@ main {
     width: 100%;
     padding: 3.7rem 2.5rem 3.2rem;
     border-radius: 2.5rem 2.5rem 0 0;
+    display: flex;
+    flex-direction: column;
+    &__results {
+      padding: 3.5rem 2.5rem 2.5rem;
+      height: auto;
+      background-color: $veryDarkCyan;
+      border-radius: 1.5rem;
+      &__TipTotal {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 2rem;
+        &__tytText {
+          color: $white;
+          font-size: 1.4rem;
+          line-height: 2rem;
+          &-person {
+            color: $grayishCyan;
+            font-size: 1.2rem;
+          }
+        }
+        &__tytNumbers {
+          color: $strongCyan;
+          font-size: 2.6rem;
+        }
+      }
+      &__button {
+        width: 100%;
+        height: 5rem;
+        font-family: 'Space Mono', monospace;
+        font-size: 1.5rem;
+        color: $veryDarkCyan;
+        border: none;
+        border-radius: 0.8rem;
+        background-color: $strongCyan;
+        &:disabled {
+          background-color: $disable;
+        }
+        &:hover {
+          background-color: $bg;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 920px) {
+  .mainContainer {
+    padding-top: 10rem;
+    gap: 6rem;
+    &__form {
+      width: 92rem;
+      height: 48rem;
+      flex-direction: row;
+      padding: 3.2rem;
+      border-radius: 2.5rem;
+      &__results {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        padding: 6rem 4rem 4rem;
+        justify-content: space-between;
+        &__TipTotal {
+          &__tytText{
+            font-size: 1.6rem;
+          }
+          &__tytNumbers{
+            font-size: 3.8rem;
+          }
+        }
+      }
+    }
   }
 }

@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react'
 import '../styles/Inputs.scss'
 import dolarIcon from '../assets/icon-dollar.svg'
+import iconPerson from '../assets/icon-person.svg'
 
 function Calculator ({ values, setValues }) {
   /* Ref */
@@ -183,6 +184,7 @@ function Calculator ({ values, setValues }) {
         </div>
 
         <div className='inputContainer__people-input'>
+          <img src={iconPerson} width={13} height={16} alt='Icono de persona dentro del input' />
           <input
             type='number'
             placeholder='0'

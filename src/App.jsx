@@ -59,26 +59,32 @@ function App () {
         <form className='mainContainer__form'>
           <Inputs values={values} setValues={setValues} />
 
-          <div>
+          <div className='mainContainer__form__results'>
             <div>
-              <p>
-                Tip Amount
-                <br />
-                <span>/ person</span>
-              </p>
-              <p>${tipAmount.toFixed(2)}</p>
+              <div className='mainContainer__form__results__TipTotal'>
+                <p className='mainContainer__form__results__TipTotal__tytText'>
+                  Tip Amount
+                  <br />
+                  <span className='mainContainer__form__results__TipTotal__tytText-person'>/ person</span>
+                </p>
+                <p className='mainContainer__form__results__TipTotal__tytNumbers'>${tipAmount.toFixed(2)}</p>
+              </div>
+
+              <div className='mainContainer__form__results__TipTotal'>
+                <p className='mainContainer__form__results__TipTotal__tytText'>
+                  Total
+                  <br />
+                  <span className='mainContainer__form__results__TipTotal__tytText-person'>/ person</span>
+                </p>
+                <p className='mainContainer__form__results__TipTotal__tytNumbers'>${totalxPerson.toFixed(2)}</p>
+              </div>
             </div>
 
-            <div>
-              <p>
-                Total
-                <br />
-                <span>/ person</span>
-              </p>
-              <p>${totalxPerson.toFixed(2)}</p>
-            </div>
-
-            <button onClick={reset} disabled={active}>
+            <button
+              onClick={reset}
+              disabled={active}
+              className='mainContainer__form__results__button'
+            >
               RESET
             </button>
           </div>
