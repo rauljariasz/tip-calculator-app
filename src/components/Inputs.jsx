@@ -1,5 +1,6 @@
 import { useRef, useEffect } from 'react'
 import '../styles/Inputs.scss'
+import dolarIcon from '../assets/icon-dollar.svg'
 
 function Calculator ({ values, setValues }) {
   /* Ref */
@@ -77,6 +78,15 @@ function Calculator ({ values, setValues }) {
     })
   }
 
+  /* Escuchador para el input de people (Can't be zero) */
+  useEffect(() => {
+    if (values.people === 0) {
+      inputPeople.current.classList.add('cantBeZero')
+    } else {
+      inputPeople.current.classList.remove('cantBeZero')
+    }
+  }, [values.people])
+
   return (
     <div className='inputContainer'>
       <div className='inputContainer__bill'>
@@ -84,6 +94,7 @@ function Calculator ({ values, setValues }) {
           Bill
         </label>
         <div className='inputContainer__bill-inputBill'>
+          <img src={dolarIcon} width={11} height={17} alt='Signo de dolar dentro del input' />
           <input
             type='number'
             id='bill'
@@ -94,11 +105,10 @@ function Calculator ({ values, setValues }) {
         </div>
       </div>
 
-      <div>
+      <div className='inputContainer__tip'>
         <p>Select Tip %</p>
-        <ul>
-          <li>
-            <label htmlFor='5'>5%</label>
+        <ul className='inputContainer__tip-list'>
+          <li className='inputContainer__tip-list-radio'>
             <input
               type='radio'
               name='tip'
@@ -107,9 +117,9 @@ function Calculator ({ values, setValues }) {
               onFocus={saveFocusTip}
               ref={cinco}
             />
+            <label htmlFor='5'>5%</label>
           </li>
-          <li>
-            <label htmlFor='10'>10%</label>
+          <li className='inputContainer__tip-list-radio'>
             <input
               type='radio'
               name='tip'
@@ -118,9 +128,9 @@ function Calculator ({ values, setValues }) {
               onFocus={saveFocusTip}
               ref={diez}
             />
+            <label htmlFor='10'>10%</label>
           </li>
-          <li>
-            <label htmlFor='15'>15%</label>
+          <li className='inputContainer__tip-list-radio'>
             <input
               type='radio'
               name='tip'
@@ -129,9 +139,9 @@ function Calculator ({ values, setValues }) {
               onFocus={saveFocusTip}
               ref={quince}
             />
+            <label htmlFor='15'>15%</label>
           </li>
-          <li>
-            <label htmlFor='25'>25%</label>
+          <li className='inputContainer__tip-list-radio'>
             <input
               type='radio'
               name='tip'
@@ -140,9 +150,9 @@ function Calculator ({ values, setValues }) {
               onFocus={saveFocusTip}
               ref={veinticinco}
             />
+            <label htmlFor='25'>25%</label>
           </li>
-          <li>
-            <label htmlFor='50'>50%</label>
+          <li className='inputContainer__tip-list-radio'>
             <input
               type='radio'
               name='tip'
@@ -151,9 +161,11 @@ function Calculator ({ values, setValues }) {
               onFocus={saveFocusTip}
               ref={cincuenta}
             />
+            <label htmlFor='50'>50%</label>
           </li>
           <li>
             <input
+              className='inputContainer__tip-list-custom'
               placeholder='Custom'
               type='number'
               onFocus={unchecked}
@@ -164,16 +176,15 @@ function Calculator ({ values, setValues }) {
         </ul>
       </div>
 
-      <div>
-        <label htmlFor='people'>
+      <div className='inputContainer__people'>
+        <div className='inputContainer__people-title'>
           <p>Number of People</p>
-          {values.people === 0 ? <p>Can't be zero</p> : null}
-        </label>
+          {values.people === 0 && <p className='cantBe'>Can't be zero</p>}
+        </div>
 
-        <div>
+        <div className='inputContainer__people-input'>
           <input
             type='number'
-            id='people'
             placeholder='0'
             onChange={savePeople}
             ref={inputPeople}
