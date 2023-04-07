@@ -48,6 +48,7 @@ function App () {
 
   return (
     <main>
+      <h1>Splitter</h1>
       <div className='mainContainer'>
         <img
           src={logo}
