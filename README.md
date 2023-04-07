@@ -33,7 +33,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Solution here](https://your-solution-url.com)
+- Solution URL: [Solution here](https://www.frontendmentor.io/solutions/calculator-app-using-reactjs-v790zlEx8R)
 - Live Site URL: [Live Site](https://rauljariasz.github.io/tip-calculator-app/)
 
 ## My process
