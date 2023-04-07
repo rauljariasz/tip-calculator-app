@@ -28,6 +28,9 @@ Users should be able to:
 
 ### Design
 
+![desktop-design-empty](https://user-images.githubusercontent.com/113625378/230535536-28fa614b-da65-436d-95f9-2eb2a990eb3b.jpg)
+![mobile-design](https://user-images.githubusercontent.com/113625378/230535637-907a0056-af4f-415c-adb8-537e7a1d4747.jpg)
+
 ### Links
 
 - Solution URL: [Solution here](https://your-solution-url.com)
