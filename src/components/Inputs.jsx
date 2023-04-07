@@ -91,14 +91,13 @@ function Calculator ({ values, setValues }) {
   return (
     <div className='inputContainer'>
       <div className='inputContainer__bill'>
-        <label htmlFor='bill'>
+        <h1>
           Bill
-        </label>
+        </h1>
         <div className='inputContainer__bill-inputBill'>
           <img src={dolarIcon} width={11} height={17} alt='Signo de dolar dentro del input' />
           <input
             type='number'
-            id='bill'
             placeholder='0'
             onChange={saveBill}
             ref={inputBill}
